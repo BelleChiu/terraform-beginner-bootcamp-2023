@@ -168,3 +168,5 @@ If it is successfully you should see a json payload return that look likes this
     "Arn": "arn:aws:iam::123456789012:user/terraformiam"
 }
 ```
+
+We'll need to generate AWS CLI credits from IAM User in order to the user AWS CLI.
