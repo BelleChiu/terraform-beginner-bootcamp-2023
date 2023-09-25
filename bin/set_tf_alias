@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+# Define the alias
+alias tf="terraform"
+
+# Check if the .bash_profile file exists
+if [ -e "$HOME/.bash_profile" ]; then
+  # Check if the alias is already defined
+  if ! grep -q "alias tf=" "$HOME/.bash_profile"; then
+    # Append the alias definition to the .bash_profile
+    echo "alias tf='terraform'" >> "$HOME/.bash_profile"
+    echo "Alias 'tf' added to .bash_profile. Please restart your shell to use it."
+  else
+    echo "Alias 'tf' already defined in .bash_profile."
+  fi
+else
+  echo "Error: .bash_profile not found. Please create it in your home directory."
+fi
