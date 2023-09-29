@@ -154,6 +154,21 @@ terraform apply -refresh-only -auto-approve
 
 It is recommend to place modules in a `modules` directory when locally developing modules but you can name it whatever you want.
 
+```
+PROJECT_ROOT
+|
+├── variables.tf      
+├── main.tf             
+├── outputs.tf        
+├── README.md
+└──  modules/
+    └── nestedA/
+          ├── README.md    
+          ├── variables.tf
+          ├── main.tf
+          ├── LICENSE
+          └── outputs.tf
+```
 
 ## Passing Input Variables
 We can pass input variables to our module.
