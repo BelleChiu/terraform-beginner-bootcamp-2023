@@ -199,3 +199,46 @@ module "terrahouse_aws" {
 ```
 
 [Modules Sources](https://developer.hashicorp.com/terraform/language/modules/sources)
+
+## Considerations when using GhatGPT to write Terraform 
+
+LLMs such as ChatGPT may not be trained on the latest documentation or information about Terraform.
+
+It may likely produce older examples that cloud be deprecated. Often affecting providers.
+
+eg. You can write "what is the lastest aws terraform provider version" in prompt.   
+And ChapGpt give the follwoing content:
+As of my last knowledge update in **September 2021**, I do not have access to real-time data. To find **the latest version of the AWS Terraform provider**, I recommend checking the official **Terraform Registry** or the **HashiCorp website**.
+
+## Working with Files in Terraform
+
+### Can and File function
+
+There are built in terraform function to check the exitance of file.
+
+```tf
+condition     = can(file(var.index_html_filepath))
+```
+
+- [can function](https://developer.hashicorp.com/terraform/language/functions/can)
+- [file function](https://developer.hashicorp.com/terraform/language/functions/file)
+
+### Filemd5
+
+[filemd5](https://developer.hashicorp.com/terraform/language/functions/filemd5)
+
+### Path Variable
+
+In terraform there is special variable called `path` that allows us to reference local paths :
+- path.module = get the path for the current module
+- path.root = get the path for the root module
+
+To check where the expression is placed. we can use `terraform console`
+
+[Special Path Variable]https://developer.hashicorp.com/terraform/language/expressions/references#path-module)
+
+resource "aws_s3_object" "index_html" {
+  bucket = aws_s3_bucket.website_bucket.bucket
+  key    = "index.html"
+  source = "${path.root}/public/index.html"
+}
