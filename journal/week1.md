@@ -396,3 +396,24 @@ resource "aws_instance" "web" {
 
 ```
 https://developer.hashicorp.com/terraform/language/resources/provisioners/remote-exec
+
+## For Each Expressions
+
+For and For Each allows us to enumerate over complex data types
+
+```tf
+[for s in var.list : upper(s)]
+
+```
+```tf
+resource "aws_iam_user" "the-accounts" {
+  for_each = toset( ["Todd", "James", "Alice", "Dottie"] )
+  name     = each.key
+}
+```
+
+This is mostly useful when you are creating multiples of a cloud resource and you want to reduce the amount of repetitive terraform code.
+
+[For Expressions](https://developer.hashicorp.com/terraform/language/expressions/for)
+
+[For Each Expressions](https://developer.hashicorp.com/terraform/language/meta-arguments/for_each)
