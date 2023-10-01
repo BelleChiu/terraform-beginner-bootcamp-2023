@@ -397,7 +397,7 @@ resource "aws_instance" "web" {
 ```
 https://developer.hashicorp.com/terraform/language/resources/provisioners/remote-exec
 
-## For Each Expressions
+## For Each Expressions 
 
 For and For Each allows us to enumerate over complex data types
 
