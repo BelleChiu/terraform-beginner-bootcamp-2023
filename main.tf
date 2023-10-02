@@ -7,13 +7,13 @@ terraform {
   #   }
   # }
 
-  # cloud {
-  #   organization = "BelleChiu"
+  cloud {
+    organization = "BelleChiu"
 
-  #   workspaces {
-  #     name = "terra-house-1"
-  #   }
-  # }
+    workspaces {
+      name = "terraform-cloud"
+    }
+  }
 
 }
 
