@@ -1,0 +1,9 @@
+provider installation {
+    filesystem_mirror{
+        path = "/home/gitpod/.terraform.d/plugns"
+        include["local.providers/*/*"]
+    }
+    direct {
+        exclude = ["local.providers/*/*"]
+    }
+}
