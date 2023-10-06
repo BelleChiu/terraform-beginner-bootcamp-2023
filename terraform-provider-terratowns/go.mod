@@ -4,6 +4,8 @@ go 1.20
 
 replace github.com/ExamProCo/terraform-provider-terratowns => /workspace/terraform-beginner-bootcamp-2023/terraform-provider-terratowns
 
+require github.com/hashicorp/terraform-plugin-sdk/v2 v2.29.0
+
 require (
 	github.com/agext/levenshtein v1.2.2 // indirect
 	github.com/apparentlymart/go-textseg/v15 v15.0.0 // indirect
@@ -44,5 +46,6 @@ require (
 	google.golang.org/appengine v1.6.7 // indirect
 	google.golang.org/genproto/googleapis/rpc v0.0.0-20230525234030-28d5490b6b19 // indirect
 	google.golang.org/grpc v1.57.0 // indirect
+
 	google.golang.org/protobuf v1.31.0 // indirect
 )
