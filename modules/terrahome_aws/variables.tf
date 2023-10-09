@@ -18,29 +18,10 @@ variable "user_uuid" {
 #   }
 # }
 
-variable "index_html_filepath" {
-  description = "File path to the index.html file"
+variable "public_path" {
+  description = "The file path for the public directory"
   type        = string
-
-# https://developer.hashicorp.com/terraform/language/functions/can
-  validation {
-    condition     = can(file(var.index_html_filepath))
-    error_message = "The specified file does not exist."
-  }
 }
-
-
-variable "error_html_filepath" {
-  description = "File path to the error.html file"
-  type        = string
-
-# https://developer.hashicorp.com/terraform/language/functions/can
-  validation {
-    condition     = can(file(var.error_html_filepath))
-    error_message = "The specified file does not exist."
-  }
-}
-
 
 variable "content_version" {
   description = "Content version (positive integer starting at 1)"
@@ -52,7 +33,3 @@ variable "content_version" {
   }
 }
 
-variable "assets_path" {
-  description = "Paht of assets folder"
-  type = string
-}
